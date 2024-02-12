@@ -21,7 +21,9 @@ type PostDetails = {
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData: PostDetails[] = fileNames.map((fileName) => {
+  const allPostsData: PostDetails[] = fileNames
+    .filter((fileName) => fileName !== '.gitignore')
+    .map((fileName) => {
     // Remove ".md" from file name to get id
     const slug = fileName.replace(/\.md$/, "");
 
@@ -50,7 +52,9 @@ export function getSortedPostsData() {
 }
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+  return fs
+    .readdirSync(postsDirectory)
+    .filter((fileName) => fileName !== '.gitignore');
 }
 
 export function getPostBySlug(slug: string) {
