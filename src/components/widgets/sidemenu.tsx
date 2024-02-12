@@ -21,6 +21,7 @@ export const Sidemenu: React.FC<SidemenuProps> = ({ carouselGoTo }) => {
 
   const handleGoTo = (index: number) => {
     if (typeof carouselGoTo === "function") {
+      window.history.pushState(null, '', `#${index}`);
       carouselGoTo(index);
       return;
     }
