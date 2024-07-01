@@ -15,7 +15,7 @@ export const PostItem: React.FC<PostItemProps> = ({ post }) => {
 
   return (
     <Link key={post.slug} href={`/posts/${post.slug}`}>
-      <div className="mb-4 border border-white p-4">
+      <div className="mb-4 border border-white rounded-md p-4">
         <div className="flex">
           <div className="mr-4">
             <Image
@@ -26,8 +26,8 @@ export const PostItem: React.FC<PostItemProps> = ({ post }) => {
             />
           </div>
           <div>
-            <h2 className="font-bold text-xl">{post.title}</h2>
-            <span>{parsedDate}</span>
+            <h2 className="font-bold text-xl text-white">{post.title}</h2>
+            <span className="text-white">{parsedDate}</span>
           </div>
         </div>
       </div>

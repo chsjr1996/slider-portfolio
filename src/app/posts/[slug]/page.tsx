@@ -1,3 +1,4 @@
+import "./post.css";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSortedPostsData, getPostBySlug } from "@/lib/posts";

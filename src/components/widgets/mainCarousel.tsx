@@ -20,6 +20,7 @@ type MainCarouselProps = {
 export const MainCarousel: React.FC<MainCarouselProps> = ({ posts }) => {
   const [api, setApi] = useState<CarouselApi>();
   const [ready, setReady] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState<undefined | number>();
 
   useEffect(() => {
     if (!api) {
@@ -27,6 +28,16 @@ export const MainCarousel: React.FC<MainCarouselProps> = ({ posts }) => {
     }
 
     setReady(true);
+  }, [api]);
+
+  useEffect(() => {
+    if (api) {
+      api.on("select", (_event) => {
+        const selectedIndex = api.selectedScrollSnap();
+        window.history.pushState(null, "", `#${selectedIndex}`);
+        setCurrentIndex(selectedIndex);
+      });
+    }
   }, [api]);
 
   useEffect(() => {
@@ -47,6 +58,7 @@ export const MainCarousel: React.FC<MainCarouselProps> = ({ posts }) => {
       }
 
       api?.scrollTo(Number(hashNumber[1]), true);
+      setCurrentIndex(Number(hashNumber[1]));
     };
 
     goToSlideByHash();
@@ -70,7 +82,7 @@ export const MainCarousel: React.FC<MainCarouselProps> = ({ posts }) => {
 
   return (
     <>
-      <Sidemenu carouselGoTo={carouselGoTo} />
+      <Sidemenu carouselGoTo={carouselGoTo} currentSelected={currentIndex} />
       {!ready && (
         <div className="w-full h-full absolute flex justify-center items-center">
           <Loading />

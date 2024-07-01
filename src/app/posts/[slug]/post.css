@@ -1,0 +1,121 @@
+/* #region General */
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: underline;
+}
+
+blockquote {
+    border-left: 2px #222222 solid;
+    padding-left: 10px;
+}
+
+hr {
+    border-color: #222222;
+    margin: 20px 0;
+}
+
+/* #endregion */
+
+/* #region Heading */
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h4 {
+    display: block;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h5 {
+    display: block;
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h6 {
+    display: block;
+    font-size: .67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+/* #endregion */
+
+/* #region Code */
+pre,
+code {
+    background-color: #222222;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px 0;
+    color: white;
+}
+
+p>code {
+    padding: 5px;
+}
+
+pre:has(code[class*="language-"]) {
+    padding-top: 1.8rem;
+    position: relative;
+}
+
+pre code[class*="language-"]::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    color: white;
+    padding: 4px;
+    border-radius: 10px 0 5px 0;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* #region pre code languages */
+pre code.language-shell::before {
+    content: 'shell';
+}
+
+/* #endregion */
+/* #endregion */

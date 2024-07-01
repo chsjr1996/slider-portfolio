@@ -26,8 +26,8 @@ export const ThemeToggle = () => {
     <Drawer>
       <DrawerTrigger asChild>
         <div className="absolute right-7 bottom-7">
-          <Button className="rounded-full w-[50px] h-[50px] bg-white dark:bg-black hover:bg-white">
-            <Pencil2Icon className="text-black dark:text-white" />
+          <Button className="rounded-full w-[50px] h-[50px] border border-gray-300 dark:border-gray-600 bg-white text-black dark:text-white dark:bg-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black">
+            <Pencil2Icon />
           </Button>
         </div>
       </DrawerTrigger>
@@ -54,7 +54,7 @@ export const ThemeToggle = () => {
                     theme === "light" ? "bg-white text-black" : "bg-transparent"
                   }`}
                   variant="ghost"
-                  onClick={() => setTheme('light')}
+                  onClick={() => setTheme("light")}
                 >
                   <SunIcon />
                 </Button>
